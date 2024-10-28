@@ -197,7 +197,7 @@ final class Dotenv
             }
 
             // don't check existence with getenv() because of thread safety issues
-            if (!isset($loadedVars[$name]) && !$overrideExistingVars && isset($_ENV[$name])) {
+            if (isset($loadedVars[$name]) && !$overrideExistingVars && isset($_ENV[$name])) {
                 continue;
             }
 
